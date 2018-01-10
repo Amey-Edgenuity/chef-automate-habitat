@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+# HDFS-Kafka-Grafana
+Setting up your complete solution on cloud premises & local using Chef and Habitat
 
-You can use the [editor on GitHub](https://github.com/ramitsurana/habitat/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Prerequisites
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+* Chef
 
-### Markdown
+## Design
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![blank diagram - page 1 3](https://user-images.githubusercontent.com/8342133/34644093-7184fe1e-f356-11e7-9210-f7fc4fadc24b.png)
 
-```markdown
-Syntax highlighted code block
+## Contents
+* [Provisioning and Deployment](#chef-habitat)
+* [Application Management](#hadoop-kafka-grafana)
 
-# Header 1
-## Header 2
-### Header 3
+### Chef-Habitat
+* Chef
 
-- Bulleted
-- List
+Install Knife 
 
-1. Numbered
-2. List
+````
+$ gem install knife-ec2
+````
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+* Habitat
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Hadoop-Kafka-Grafana
+* Hadoop
+* Kafka
+* Grafana
 
-### Jekyll Themes
+## References
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ramitsurana/habitat/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* [Multi-Server Setup](https://github.com/dwatrous/hadoop-multi-server-ansible)
+* [Hadoop Cookbook](https://github.com/caskdata/hadoop_cookbook/blob/master/recipes/)
+* [Habitat Examples](https://github.com/habitat-sh/habitat-example-plans)
+* [Habitat Docs](https://www.habitat.sh/docs/developing-packages/)
 
-### Support or Contact
+## License
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+MIT License

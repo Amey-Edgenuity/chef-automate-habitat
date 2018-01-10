@@ -1,0 +1,20 @@
+pkg_origin=ramitsurana
+pkg_name=hadoop
+#pkg_version="0.2.0"
+pkg_license=('MIT')
+pkg_maintainer="Ramit Surana <ramitsurana@gmail.com>"
+pkg_upstream_url=https://github.com/ramitsurana/hdfs-kafka-grafana
+pkg_deps=(core/vim)
+pkg_version="0.1.0"
+
+pkg_binds=(
+  return 0
+  )
+
+do_build() {
+  return 0
+}
+
+do_install() {
+  return 0
+}
