@@ -1,4 +1,4 @@
-# HDFS-Kafka-Grafana
+# Chef-Automate-Habitat
 Setting up your complete solution on cloud premises & local using Chef and Habitat
 
 ## Prerequisites
@@ -13,7 +13,7 @@ Setting up your complete solution on cloud premises & local using Chef and Habit
 * [Provisioning and Deployment](#chef-habitat)
 * [Application Management](#hadoop-kafka-grafana)
 
-### Chef-Habitat
+### Chef
 * Chef
 
 Install Knife 
@@ -22,13 +22,42 @@ Install Knife
 $ gem install knife-ec2
 ````
 
+Create a role
+````
+$ knife role create nodejs
+````
+
+````
+{
+  "name": "nodejs",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "nodejs": {
+      "version": "0.4.11",
+      "npm": "1.0.30"
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[build-essential]",
+    "recipe[git]",
+    "recipe[nodejs]",
+    "recipe[nodejs::npm]"
+  ]
+}
+````
+
+Create your instance
+
+````
+$ knife ec2 server create -x ubuntu -r "role[nodejs]"
+````
 
 * Habitat
-
-### Hadoop-Kafka-Grafana
-* Hadoop
-* Kafka
-* Grafana
 
 ## References
 
