@@ -7,11 +7,11 @@ Setting up your complete solution on cloud premises & local using Chef and Habit
 
 ## Design
 
-![blank diagram - page 1 3](https://user-images.githubusercontent.com/8342133/34644093-7184fe1e-f356-11e7-9210-f7fc4fadc24b.png)
+![chef-automate-habitat](https://user-images.githubusercontent.com/8342133/34904310-62fdd600-f869-11e7-8aa9-f9da60a268da.png)
 
 ## Contents
-* [Provisioning and Deployment](#chef-habitat)
-* [Application Management](#hadoop-kafka-grafana)
+* [Chef](#chef)
+* [Habitat](#habitat)
 
 ### Chef
 * Chef
