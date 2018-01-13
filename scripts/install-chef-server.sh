@@ -31,9 +31,9 @@ fi
 
 # create user and organization
 if [ ! $(sudo chef-server-ctl user-list | grep delivery) ]; then
-  echo "Creating de user and 4thcoffee organization..."
-  chef-server-ctl user-create delivery Chef Admin admin@chefautomate.com insecurepassword --filename /drop/delivery.pem
-  chef-server-ctl org-create ChefAutomate "Chef Automate, Inc." --association_user delivery --filename chefautomate-validator.pem
+  echo "Creating de user and Chef Automate organization..."
+  chef-server-ctl user-create $USER Chef Admin admin@chefautomate.com insecurepassword --filename /drop/delivery.pem
+  chef-server-ctl org-create $ORG "Chef Automate, Inc." --association_user $USER --filename $ORG-validator.pem
 fi
 
 # configure data collection
