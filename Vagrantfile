@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.define "chefserver" do |chefserver|
-    chefserver.vm.box = "precise64"
+    chefserver.vm.box = "ubuntu/precise64"
     chefserver.vm.hostname = 'chefserver'
     chefserver.vm.box_url = "ubuntu/precise64"
     
