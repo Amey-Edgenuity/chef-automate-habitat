@@ -1,8 +1,11 @@
 #!/bin/bash
+# Usage:
+# $SCRIPT ec2-53-42-54 mike
 apt-get update
 apt-get -y install curl
 
 chef_server_fqdn=$1
+user=$2
 
 # create downloads directory
 if [ ! -d /downloads ]; then
@@ -34,7 +37,7 @@ if [ ! $(which automate-ctl) ]; then
 
   # create an initial user
   echo "Creating delivery user..."
-  automate-ctl create-user default $USER --password insecurepassword --roles "admin"
+  automate-ctl create-user default $user --password insecurepassword --roles "admin"
 fi
 
 echo "Your Chef Automate server is ready!"
