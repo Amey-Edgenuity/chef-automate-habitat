@@ -1,8 +1,11 @@
 #!/bin/bash
+# $ script ec2-65-37 mike chefautomate
 apt-get update
 apt-get -y install curl
 
 chef_automate_fqdn=$1
+user=$2
+org=$3
 
 # create staging directories
 if [ ! -d /drop ]; then
@@ -32,8 +35,8 @@ fi
 # create user and organization
 if [ ! $(sudo chef-server-ctl user-list | grep delivery) ]; then
   echo "Creating de user and Chef Automate organization..."
-  chef-server-ctl user-create $USER Chef Admin admin@chefautomate.com insecurepassword --filename /drop/delivery.pem
-  chef-server-ctl org-create $ORG "Chef Automate, Inc." --association_user $USER --filename $ORG-validator.pem
+  chef-server-ctl user-create $user Chef Admin admin@chefautomate.com insecurepassword --filename /drop/delivery.pem
+  chef-server-ctl org-create $org "Inc." --association_user $USER --filename $org-validator.pem
 fi
 
 # configure data collection
