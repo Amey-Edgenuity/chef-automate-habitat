@@ -6,6 +6,7 @@ apt-get -y install curl
 
 chef_server_fqdn=$1
 user=$2
+org=chefautomate
 
 # create downloads directory
 if [ ! -d /downloads ]; then
@@ -27,7 +28,7 @@ if [ ! $(which automate-ctl) ]; then
   automate-ctl preflight-check
 
   # run setup
-  automate-ctl setup --license /tmp/automate.license --key /tmp/delivery.pem --server-url https://$chef_server_fqdn/organizations/4thcoffee --fqdn $(hostname) --enterprise default --configure --no-build-node
+  automate-ctl setup --license /home/ubuntu/automate.license --key /home/ubuntu/delivery.pem --server-url https://$chef_server_fqdn/organizations/$org --fqdn $(hostname) --enterprise default --configure --no-build-node
   automate-ctl reconfigure
 
   # wait for all services to come online
@@ -37,7 +38,7 @@ if [ ! $(which automate-ctl) ]; then
 
   # create an initial user
   echo "Creating delivery user..."
-  automate-ctl create-user default $user --password insecurepassword --roles "admin"
+  automate-ctl create-user default $user --password admin --roles "admin"
 fi
 
 echo "Your Chef Automate server is ready!"
