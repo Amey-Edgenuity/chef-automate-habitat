@@ -14,15 +14,15 @@ if [ ! -d /downloads ]; then
 fi
 
 # download the Chef Automate package
-if [ ! -f /downloads/automate_1.6.99-1_amd64.deb ]; then
+if [ ! -f /downloads/automate_1.7.114-1_amd64.deb ]; then
   echo "Downloading the Chef Automate package..."
-  wget -nv -P /downloads https://packages.chef.io/files/stable/automate/1.6.99/ubuntu/16.04/automate_1.6.99-1_amd64.deb
+  wget -nv -P /downloads https://packages.chef.io/files/stable/automate/1.7.114/ubuntu/16.04/automate_1.7.114-1_amd64.deb
 fi
 
 # install Chef Automate
 if [ ! $(which automate-ctl) ]; then
   echo "Installing Chef Automate..."
-  dpkg -i /downloads/automate_1.6.99-1_amd64.deb
+  dpkg -i /downloads/automate_1.7.144-1_amd64.deb
 
   # run preflight check
   automate-ctl preflight-check
