@@ -1,4 +1,4 @@
-pkg_origin=ramitsurana
+pkg_origin=amey_test
 pkg_name=hadoop
 pkg_version="0.0.1"
 pkg_license=('MIT')
